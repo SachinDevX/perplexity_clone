@@ -10,5 +10,5 @@ app = FastAPI()
 
 @app.post("/chat")
 def chat_endpoint(body: ChatBody):
-    search_service.web_search()
+    search_service.web_search(body.query)
     return body.query
